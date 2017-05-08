@@ -1,0 +1,9 @@
+C:\repos\XUnitTestDemo\XUnitTestDemo\bin\Debug\netcoreapp1.1\XUnitTestDemo.deps.json
+C:\repos\XUnitTestDemo\XUnitTestDemo\bin\Debug\netcoreapp1.1\XUnitTestDemo.runtimeconfig.json
+C:\repos\XUnitTestDemo\XUnitTestDemo\bin\Debug\netcoreapp1.1\XUnitTestDemo.runtimeconfig.dev.json
+C:\repos\XUnitTestDemo\XUnitTestDemo\bin\Debug\netcoreapp1.1\XUnitTestDemo.dll
+C:\repos\XUnitTestDemo\XUnitTestDemo\obj\Debug\netcoreapp1.1\XUnitTestDemo.AssemblyInfo.cs
+C:\repos\XUnitTestDemo\XUnitTestDemo\bin\Debug\netcoreapp1.1\XUnitTestDemo.pdb
+C:\repos\XUnitTestDemo\XUnitTestDemo\obj\Debug\netcoreapp1.1\XUnitTestDemo.dll
+C:\repos\XUnitTestDemo\XUnitTestDemo\obj\Debug\netcoreapp1.1\XUnitTestDemo.pdb
+C:\repos\XUnitTestDemo\XUnitTestDemo\obj\Debug\netcoreapp1.1\XUnitTestDemo.csprojResolveAssemblyReference.cache
