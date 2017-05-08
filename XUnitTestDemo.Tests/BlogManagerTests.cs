@@ -6,26 +6,18 @@ using System;
 
 namespace XUnitTestDemo.Tests
 {
-    public class BlogManagerTests
+    public class DatabaseFixture
     {
-        private readonly ApplicationDbContext _context;
-        private readonly Managers.BlogManager _blogManager;
-
-        public BlogManagerTests()
+        // Test Fixture to set up data once for all the tests in this file!
+        public DatabaseFixture()
         {
             DbContextOptions<ApplicationDbContext> options;
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            builder.UseInMemoryDatabase(Guid.NewGuid().ToString());
+            builder.UseInMemoryDatabase();
             options = builder.Options;
 
             _context = new ApplicationDbContext(options);
-            _blogManager = new Managers.BlogManager(_context);
 
-            InsertRecords();
-        }
-
-        public void InsertRecords()
-        {
             _context.Blogs.Add(new Blog { BlogId = 1, Url = "www.test1.com", Posts = null });
             _context.Blogs.Add(new Blog { BlogId = 2, Url = "www.test2.com", Posts = null });
             _context.Blogs.Add(new Blog { BlogId = 3, Url = "www.test3.com", Posts = null });
@@ -37,6 +29,19 @@ namespace XUnitTestDemo.Tests
             _context.Posts.Add(new Post { PostId = 3, Title = "Title3", Content = "Content3", BlogId = 2 });
             _context.Posts.Add(new Post { PostId = 4, Title = "Title4", Content = "Content4", BlogId = 3 });
             _context.SaveChanges();
+        }
+
+        public ApplicationDbContext _context { get; set; }
+    }
+
+    public class BlogManagerTests : IClassFixture<DatabaseFixture>
+    {
+        //private readonly ApplicationDbContext _context;
+        private readonly Managers.BlogManager _blogManager;
+
+        public BlogManagerTests(DatabaseFixture fixture)
+        {
+            _blogManager = new Managers.BlogManager(fixture._context);  
         }
 
         [Fact]
